@@ -98,6 +98,5 @@ curl -X POST https://api.swiftpay.local/payments/ \
   }'
 ```
 
-*(A dedicated Developer API Portal is on the roadmap.)*
 
 
