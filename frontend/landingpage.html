@@ -1,0 +1,281 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SwiftPay - Transparent Payments for Merchants</title>
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Inter and Hanken Grotesk -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Identity Services -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c2c6d6",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2a313d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-fixed": "#141b2b",
+                    "on-surface": "#151c27",
+                    "outline": "#727785",
+                    "on-tertiary-fixed": "#311400",
+                    "on-secondary-fixed-variant": "#404758",
+                    "tertiary": "#924700",
+                    "primary-fixed": "#d8e2ff",
+                    "secondary-container": "#d9dff5",
+                    "surface-tint": "#005ac2",
+                    "on-background": "#151c27",
+                    "surface-container-high": "#e2e8f8",
+                    "secondary-fixed-dim": "#c0c6db",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "inverse-primary": "#adc6ff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#575e70",
+                    "on-primary-fixed": "#001a42",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "on-tertiary": "#ffffff",
+                    "surface-container": "#e7eefe",
+                    "on-surface-variant": "#424754",
+                    "secondary-fixed": "#dce2f7",
+                    "on-tertiary-container": "#fffbff",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#5c6274",
+                    "tertiary-container": "#b75b00",
+                    "surface-container-highest": "#dce2f3",
+                    "surface-container-low": "#f0f3ff",
+                    "inverse-on-surface": "#ebf1ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#fefcff",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#d3daea",
+                    "surface-bright": "#f9f9ff",
+                    "tertiary-fixed": "#ffdcc6",
+                    "on-primary-fixed-variant": "#004395",
+                    "primary-container": "#2170e4",
+                    "background": "#f9f9ff",
+                    "primary-fixed-dim": "#adc6ff",
+                    "primary": "#0058be",
+                    "surface-variant": "#dce2f3",
+                    "error": "#ba1a1a",
+                    "surface": "#f9f9ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-page": "32px",
+                    "gutter": "24px",
+                    "stack-lg": "24px",
+                    "stack-md": "16px",
+                    "stack-sm": "8px",
+                    "container-max": "1280px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Hanken Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Hanken Grotesk"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Hanken Grotesk"
+                    ],
+                    "code-sm": [
+                            "JetBrains Mono"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "code-sm": [
+                            "13px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col font-sans selection:bg-primary-container selection:text-on-primary-container overscroll-none">
+<!-- TopNavBar (Linear/Transactional context - hidden per guidelines, but providing a simplified version for the logo as it's a landing page) -->
+<header class="w-full bg-surface-container-lowest border-b border-outline-variant">
+<div class="flex justify-between items-center w-full px-margin-page py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg text-headline-lg font-black text-primary">
+                SwiftPay
+            </div>
+<!-- Navigation hidden on landing page per "Linear/Transactional" rule to prioritize the canvas, but keeping a simple login hook -->
+<div class="hidden md:flex items-center gap-gutter"><button id="get-started-btn" class="font-label-md text-label-md bg-primary text-on-primary px-6 py-2 rounded-lg hover:opacity-90 transition-colors cursor-pointer">Get Started</button></div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center w-full">
+<!-- Hero Section -->
+<section class="w-full max-w-container-max mx-auto px-margin-page flex flex-col items-center text-center py-12 md:py-16">
+<h1 class="font-display-lg text-display-lg max-w-3xl mb-stack-lg text-on-background">
+                Payments merchants can actually see through.
+            </h1>
+<p class="font-body-lg text-body-lg text-secondary max-w-2xl mb-12">
+                Know exactly where every payment is in its lifecycle, eliminate missing webhooks, and get paid predictably on time. No black boxes.
+            </p>
+
+
+</section>
+<!-- How it works -->
+<section class="w-full bg-surface border-y border-outline-variant py-12 md:py-16">
+<div class="max-w-container-max mx-auto px-margin-page">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-stack-sm">The lifecycle of clarity</h2>
+<p class="font-body-lg text-body-lg text-secondary">A transparent flow from initiation to your bank account.</p>
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-between max-w-4xl mx-auto gap-12 md:gap-0">
+<!-- Connecting line (Desktop) -->
+<div class="hidden md:block absolute top-12 left-[10%] right-[10%] h-px bg-outline-variant z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center text-center group mb-12">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center mb-stack-md transition-colors group-hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 0;">link</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">Connect</h3>
+<p class="font-body-sm text-body-sm text-secondary max-w-[150px]">Link your business in minutes.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center text-center group mb-12">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center mb-stack-md transition-colors group-hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 0;">point_of_sale</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">Accept</h3>
+<p class="font-body-sm text-body-sm text-secondary max-w-[150px]">Process payments reliably.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center text-center group mb-12">
+<div class="w-24 h-24 bg-surface-container-lowest border border-outline-variant rounded-full flex items-center justify-center mb-stack-md transition-colors group-hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[32px] text-primary" style="font-variation-settings: 'FILL' 0;">account_balance</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background mb-unit">Settle</h3>
+<p class="font-body-sm text-body-sm text-secondary max-w-[150px]">Watch funds arrive on time.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits -->
+<section class="w-full max-w-container-max mx-auto px-margin-page py-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Benefit Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 hover:bg-surface-variant transition-colors cursor-default">
+<div class="w-12 h-12 bg-surface border border-outline-variant rounded-lg flex items-center justify-center mb-stack-lg">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">radar</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-background mb-stack-sm">
+                        Track every payment
+                    </h3>
+<p class="font-body-lg text-body-lg text-secondary">Eliminate "where is my money" anxiety with real-time lifecycle tracking for every transaction.</p>
+</div>
+<!-- Benefit Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 hover:bg-surface-variant transition-colors cursor-default">
+<div class="w-12 h-12 bg-surface border border-outline-variant rounded-lg flex items-center justify-center mb-stack-lg">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">webhook</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-background mb-stack-sm">
+                        Never miss a webhook
+                    </h3>
+<p class="font-body-lg text-body-lg text-secondary">Stop flying blind. Monitor delivery status with transparent logs and automated failure retries.</p>
+</div>
+<!-- Benefit Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 hover:bg-surface-variant transition-colors cursor-default">
+<div class="w-12 h-12 bg-surface border border-outline-variant rounded-lg flex items-center justify-center mb-stack-lg">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 0;">event_available</span>
+</div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-background mb-stack-sm">
+                        Predictable settlement
+                    </h3>
+<p class="font-body-lg text-body-lg text-secondary">Take control of your cash flow with exact settlement dates and zero-surprise payout schedules.</p>
+</div>
+</div>
+</section>
+</main>
+
+
+
+
+<div id="login-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-on-background/50 backdrop-blur-sm"><div class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant w-full max-w-md shadow-lg"><div class="flex justify-between items-center mb-6"><h2 id="modal-title" class="font-headline-md text-headline-md text-on-background">Login to SwiftPay</h2><button id="close-login-modal" class="material-symbols-outlined text-secondary hover:text-on-background cursor-pointer">close</button></div><div class="flex flex-col gap-4"><div id="google-button-container" class="flex justify-center w-full"></div><button id="google-login-btn-fallback" class="hidden flex items-center justify-center gap-2 w-full border border-outline-variant py-3 rounded-lg font-label-md hover:bg-surface-variant transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>Continue with Google</button><div class="relative py-2"><div class="absolute inset-0 flex items-center"><div class="w-full border-t border-outline-variant"></div></div><div class="relative flex justify-center text-label-md"><span id="or-divider-text" class="bg-surface-container-lowest px-2 text-secondary">Or login with email</span></div></div><form id="auth-form" class="flex flex-col gap-4"><div id="business-name-group" class="hidden flex-col gap-2"><label class="font-label-md text-secondary">Business Name</label><input id="business-name-input" type="text" placeholder="Your Business" class="w-full border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary outline-none"></div><div class="flex flex-col gap-2"><label class="font-label-md text-secondary">Email</label><input id="email-input" type="email" placeholder="hello@example.com" class="w-full border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary outline-none"></div><div class="flex flex-col gap-2"><label class="font-label-md text-secondary">Password</label><input id="password-input" type="password" placeholder="••••••••" class="w-full border border-outline-variant rounded-lg px-4 py-2 focus:ring-2 focus:ring-primary outline-none"></div><button id="auth-submit-btn" type="submit" class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md mt-2 hover:opacity-90 transition-colors">Login</button></form><div class="text-center mt-4"><p class="text-secondary font-body-sm text-body-sm"><span id="auth-toggle-text">Don't have an account?</span> <a href="#" id="auth-toggle-link" class="text-primary hover:underline font-label-md">Sign up</a></p></div></div></div></div>
+
+<script src="js/components.js"></script><script src="js/api.js"></script><script src="js/login.js"></script></body></html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Profile Settings - SwiftPay</title>
+<link rel="icon" type="image/jpeg" href="favicon.jpg">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c2c6d6",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2a313d",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#141b2b",
+                        "on-surface": "#151c27",
+                        "outline": "#727785",
+                        "on-tertiary-fixed": "#311400",
+                        "on-secondary-fixed-variant": "#404758",
+                        "tertiary": "#924700",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-container": "#d9dff5",
+                        "surface-tint": "#005ac2",
+                        "on-background": "#151c27",
+                        "surface-container-high": "#e2e8f8",
+                        "secondary-fixed-dim": "#c0c6db",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "inverse-primary": "#adc6ff",
+                        "on-error-container": "#93000a",
+                        "secondary": "#575e70",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#e7eefe",
+                        "on-surface-variant": "#424754",
+                        "secondary-fixed": "#dce2f7",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5c6274",
+                        "tertiary-container": "#b75b00",
+                        "surface-container-highest": "#dce2f3",
+                        "surface-container-low": "#f0f3ff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#fefcff",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d3daea",
+                        "surface-bright": "#f9f9ff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-primary-fixed-variant": "#004395",
+                        "primary-container": "#2170e4",
+                        "background": "#f9f9ff",
+                        "primary-fixed-dim": "#adc6ff",
+                        "primary": "#0058be",
+                        "surface-variant": "#dce2f3",
+                        "error": "#ba1a1a",
+                        "surface": "#f9f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-page": "32px",
+                        "gutter": "24px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "container-max": "1280px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "code-sm": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "code-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-lg text-body-lg overscroll-none">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface w-full sticky top-0 z-50 border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center w-full px-margin-page py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter">
+<a class="font-headline-lg text-headline-lg font-black text-primary dark:text-primary-fixed-dim tracking-tighter" href="#">SwiftPay</a>
+<div class="hidden md:flex gap-gutter ml-8">
+<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 px-4 py-2 rounded-lg font-label-md text-label-md" href="dashboard.html">Dashboard</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:bg-surface-container-low dark:hover:bg-surface-variant transition-colors cursor-pointer active:opacity-80 px-4 py-2 font-label-md text-label-md" href="#">Profile</a>
+</div>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="text-secondary hover:bg-surface-container-low transition-colors p-2 rounded-full cursor-pointer active:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-page py-4">
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Profile Settings</h1>
+<p class="font-body-lg text-body-lg text-secondary mt-2">Manage your business details and developer integrations.</p>
+</div>
+<!-- Single Large Card Container -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden">
+<!-- Section 1: Business details -->
+<div class="p-8 border-b border-outline-variant">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Business details</h2>
+<form id="profile-form" class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-unit md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface" for="email-address">Email address</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant bg-surface-variant font-body-sm text-body-sm text-secondary transition-colors cursor-not-allowed" id="email-address" type="email" readonly>
+</div>
+<div class="flex flex-col gap-unit md:col-span-2">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="phone-number">Phone number</label>
+<span id="phone-status-badge" class="hidden font-label-sm text-label-sm px-2 py-1 bg-green-100 text-green-800 rounded">Verified</span>
+</div>
+<div class="flex gap-4">
+<input class="flex-1 px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface transition-colors" id="phone-number" type="tel" maxlength="10" placeholder="e.g. 9876543210">
+<button id="verify-phone-btn" class="bg-white border border-outline-variant text-on-surface font-label-md text-label-md px-4 py-3 rounded-lg hover:bg-surface-container-low transition-colors whitespace-nowrap" type="button">Verify</button>
+</div>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="business-name">Business name</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface transition-colors" id="business-name" type="text" value="" placeholder="Your Business Name">
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="business-type">Business type</label>
+<select class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface appearance-none transition-colors" id="business-type">
+<option value="private-limited">Private Limited</option>
+<option value="proprietorship">Sole Proprietorship</option>
+<option value="partnership">Partnership</option>
+<option value="llp">LLP</option>
+</select>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="pan">PAN</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface uppercase transition-colors" id="pan" type="text" value="" placeholder="e.g. ABCDE1234F">
+</div>
+<div class="flex flex-col gap-unit">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface" for="gst">GST number</label>
+<span class="font-body-sm text-body-sm text-secondary">Optional</span>
+</div>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface uppercase transition-colors" id="gst" placeholder="Enter GST number" type="text">
+</div>
+<div class="flex flex-col gap-unit md:col-span-2 mt-4 border-t border-outline-variant pt-4">
+<h3 class="font-label-md text-label-md text-secondary uppercase tracking-wider mb-2">Bank Details</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter"><div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="bank-name">Bank name</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface transition-colors" id="bank-name" type="text" placeholder="Enter bank name">
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="holder-name">Account holder name</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface transition-colors" id="holder-name" type="text" placeholder="Enter holder name">
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="account-number">Bank account number</label>
+<div class="relative w-full">
+  <input class="w-full px-4 py-3 pr-12 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface transition-colors font-code-sm" id="account-number" type="password" placeholder="Enter account number">
+  <button id="toggle-account-btn" type="button" class="absolute right-3 top-1/2 -translate-y-1/2 text-secondary hover:text-on-surface transition-colors flex items-center justify-center" aria-label="Toggle account number visibility">
+    <span class="material-symbols-outlined text-[20px]">visibility</span>
+  </button>
+</div>
+</div>
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="ifsc">IFSC code</label>
+<input class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface uppercase transition-colors font-code-sm" id="ifsc" type="text" value="" placeholder="e.g. HDFC0001234">
+</div></div>
+</div>
+<div class="flex flex-col gap-unit md:col-span-2">
+<label class="font-label-md text-label-md text-on-surface" for="address">Business address</label>
+<textarea class="w-full px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-body-sm text-body-sm text-on-surface transition-colors resize-none" id="address" rows="3" placeholder="Enter your business address"></textarea>
+</div>
+<div class="md:col-span-2 flex justify-end mt-4">
+<button id="save-profile-btn" class="bg-gray-900 text-white font-label-md text-label-md px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors" type="button">Save changes</button>
+</div>
+</form>
+</div>
+<!-- Section 2: Developer settings -->
+<div class="p-8 bg-surface-bright">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Developer settings</h2>
+<div class="flex flex-col gap-stack-lg">
+<div class="flex flex-col gap-unit">
+<label class="font-label-md text-label-md text-on-surface" for="webhook">Webhook URL</label>
+<p class="font-body-sm text-body-sm text-secondary mb-2">We will send real-time event notifications to this endpoint.</p>
+<div class="flex gap-4">
+<input class="flex-1 px-4 py-3 rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-code-sm text-code-sm text-on-surface transition-colors" id="webhook" type="url" value="" placeholder="e.g. https://api.yourdomain.com/webhooks/swiftpay">
+<button class="bg-white border border-outline-variant text-on-surface font-label-md text-label-md px-4 py-3 rounded-lg hover:bg-surface-container-low transition-colors whitespace-nowrap">Test</button>
+</div>
+</div>
+<div class="border border-outline-variant rounded-lg p-6 bg-surface-container-lowest mt-4">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div>
+<h3 class="font-label-md text-label-md text-on-surface font-semibold">Live API keys</h3>
+<p class="font-body-sm text-body-sm text-secondary mt-1">Use these keys to authenticate API requests from your server.</p>
+</div>
+<button id="generate-key-btn" class="bg-white border border-outline-variant text-on-surface font-label-md text-label-md px-4 py-2 rounded-lg hover:bg-surface-container-low transition-colors flex items-center gap-2 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+Generate API key
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<!-- API Key Modal -->
+<div id="phone-otp-section" class="hidden fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-sm flex items-center justify-center">
+    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-lg w-full max-w-sm border border-outline-variant">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="font-headline-sm text-on-surface">Enter Verification Code</h3>
+            <button id="close-otp-modal-btn" class="material-symbols-outlined text-secondary hover:text-on-surface transition-colors">close</button>
+        </div>
+        <p class="text-secondary font-body-sm mb-4">We sent a 6-digit code to your phone number.</p>
+        <div class="flex flex-col gap-4">
+            <input class="w-full px-4 py-3 text-center tracking-[0.5em] rounded-lg border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none bg-surface-container-lowest font-headline-sm text-on-surface transition-colors" id="phone-otp-input" type="text" maxlength="6" placeholder="------">
+            <button id="submit-phone-otp-btn" class="w-full bg-primary text-on-primary font-label-md text-label-md px-4 py-3 rounded-lg hover:opacity-90 transition-colors" type="button">Verify OTP</button>
+        </div>
+    </div>
+</div>
+
+<div id="api-key-modal" class="hidden fixed inset-0 z-50 bg-on-surface/50 backdrop-blur-sm flex items-center justify-center">
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 max-w-lg w-full mx-4 shadow-2xl">
+        <div class="flex justify-between items-start mb-6">
+            <div>
+                <h2 class="font-headline-md text-headline-md text-on-surface">API Keys Generated</h2>
+                <p class="font-body-sm text-body-sm text-secondary mt-1">Please copy your Key Secret now. You will not be able to see it again!</p>
+            </div>
+            <button id="close-modal-btn" class="text-secondary hover:text-on-surface transition-colors">
+                <span class="material-symbols-outlined text-[24px]">close</span>
+            </button>
+        </div>
+        
+        <div class="space-y-4">
+            <div class="flex flex-col gap-unit">
+                <label class="font-label-md text-label-md text-on-surface">Key ID</label>
+                <div class="flex items-center gap-2">
+                    <input id="modal-key-id" type="text" readonly class="flex-1 px-4 py-3 rounded-lg border border-outline-variant bg-surface-variant font-code-sm text-code-sm text-on-surface cursor-default">
+                    <button id="copy-key-id" class="p-3 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors text-secondary hover:text-on-surface">
+                        <span class="material-symbols-outlined text-[20px]">content_copy</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex flex-col gap-unit">
+                <label class="font-label-md text-label-md text-on-surface">API Key Secret</label>
+                <div class="flex items-center gap-2">
+                    <input id="modal-key-secret" type="text" readonly class="flex-1 px-4 py-3 rounded-lg border border-outline-variant bg-surface-variant font-code-sm text-code-sm text-on-surface cursor-default">
+                    <button id="copy-key-secret" class="p-3 rounded-lg border border-outline-variant hover:bg-surface-container-low transition-colors text-secondary hover:text-on-surface">
+                        <span class="material-symbols-outlined text-[20px]">content_copy</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-8 flex justify-end">
+            <button id="done-modal-btn" class="bg-primary text-on-primary font-label-md text-label-md px-6 py-3 rounded-lg hover:opacity-90 transition-colors w-full">I have saved my Key Secret</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="js/components.js?v=5"></script>
+<script src="js/api.js?v=5"></script>
+<script src="js/profile.js?v=6"></script>
+</body>
+</html>
