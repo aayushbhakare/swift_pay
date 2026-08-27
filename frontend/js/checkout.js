@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.paymentIdDisplay.textContent = paymentId.split('-')[0] + '...';
 
     // Fetch Payment Details
-    fetch(`http://127.0.0.1:8001/api/v1/payments/checkout/${paymentId}/`)
+    fetch(`/api/v1/payments/checkout/${paymentId}/`)
         .then(res => {
             if (!res.ok) throw new Error('Payment not found or already processed.');
             return res.json();
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const originalText = btnElement.innerHTML;
         btnElement.innerHTML = `<div class="animate-spin rounded-full h-5 w-5 border-b-2 border-current mx-auto"></div>`;
         
-        fetch(`http://127.0.0.1:8001/api/v1/payments/checkout/${paymentId}/process/`, {
+        fetch(`/api/v1/payments/checkout/${paymentId}/process/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
