@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const getStartedBtn = document.getElementById('get-started-btn');
     const loginModal = document.getElementById('login-modal');
     const closeModal = document.getElementById('close-login-modal');
     const googleLoginBtn = document.getElementById('google-login-btn');
+    const getStartedBtn = document.getElementById('get-started-btn');
 
     if (getStartedBtn) {
         getStartedBtn.addEventListener('click', (e) => {
