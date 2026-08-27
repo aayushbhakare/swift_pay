@@ -1,6 +1,6 @@
 # SwiftPay 💳
 
-SwiftPay is a modern, high-performance payment gateway designed for developers. Built on a robust Django backend and a lightweight Vanilla JavaScript frontend, it offers secure payment processing, real-time webhooks, and comprehensive merchant tooling.
+SwiftPay is a modern, high-performance payment gateway designed for merchants and developers. Built on a robust Django backend and a lightweight Vanilla JavaScript frontend, it offers secure payment processing, real-time webhooks, and comprehensive merchant tooling.
 
 ## 🚀 Key Features
 
