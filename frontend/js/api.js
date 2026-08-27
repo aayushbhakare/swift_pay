@@ -1,6 +1,6 @@
 
 const SwiftPayAPI = {
-    BASE_URL: 'http://127.0.0.1:8001/api/v1',
+    BASE_URL: '/api/v1',
     getToken() { return localStorage.getItem('swiftpay_jwt_access') || ''; },
     setToken(access, refresh) {
         localStorage.setItem('swiftpay_jwt_access', access);
