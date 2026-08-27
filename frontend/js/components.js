@@ -155,6 +155,20 @@ const Components = (() => {
         return tr;
     }
 
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeBtn = document.getElementById('theme-toggle');
+        if (themeBtn) {
+            themeBtn.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                const icon = themeBtn.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+                }
+            });
+        }
+    });
+
     function showToast(message, type = 'info') {
         let container = document.getElementById('toast-container');
         if (!container) {
