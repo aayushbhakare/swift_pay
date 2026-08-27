@@ -11,6 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const heroGetStartedBtn = document.getElementById('hero-get-started-btn');
+    if (heroGetStartedBtn) {
+        heroGetStartedBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.classList.remove('hidden');
+        });
+    }
+
     if (closeModal) {
         closeModal.addEventListener('click', () => {
             loginModal.classList.add('hidden');
